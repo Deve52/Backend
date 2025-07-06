@@ -6,11 +6,16 @@ import Register from './pages/Register'
 import Upload from './pages/Upload'
 import AppRoutes from './routes/AppRoutes'
 import 'remixicon/fonts/remixicon.css';
+import { useSelector } from 'react-redux'
+import { deleteMusic } from './store/reducers/musicSlice'
+import { useDispatch } from 'react-redux'
 
 
 const App = () => {
-
-
+ const store = useSelector((state)=>state)
+console.log(store)
+let dispatch = useDispatch()
+dispatch(deleteMusic())
   return (
     
 

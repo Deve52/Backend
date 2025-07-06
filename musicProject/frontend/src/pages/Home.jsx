@@ -1,69 +1,50 @@
 import React from 'react'
 import "./Home.css"
 import BottomHome from '../components/BottomHome'
+
+const songData = [
+  { title: "Ho Hey", artist: "The Lumineers", cover: "path/to/hohey.jpg" },
+  { title: "Fix You", artist: "Coldplay", cover: "path/to/fixyou.jpg" },
+  { title: "Shape of You", artist: "Ed Sheeran", cover: "path/to/shape.jpg" },
+  { title: "Rolling in the Deep", artist: "Adele", cover: "path/to/rolling.jpg" },
+  { title: "Believer", artist: "Imagine Dragons", cover: "path/to/believer.jpg" },
+  { title: "Sugar", artist: "Maroon 5", cover: "path/to/sugar.jpg" },
+  { title: "Shake it Off", artist: "Taylor Swift", cover: "path/to/shake.jpg" },
+  { title: "Sorry", artist: "Justin Bieber", cover: "path/to/sorry.jpg" },
+  { title: "Midnight Serenade", artist: "Luna", cover: "path/to/midnight.jpg" },
+]
+
 const Home = () => {
   return (
-    <home-section>
-      <home-header>
-       <div className='div'>
-         <i className="ri-music-fill"></i>
-        <h1>Stream</h1>
-       </div>
-       <i className="ri-search-2-line"></i>
+    <div className="home-container">
 
-      </home-header>
+      <header className="home-header">
+        <div className="header-left">
+          <i className="ri-music-fill"></i>
+          <h1>Stream</h1>
+        </div>
+        <div className="header-right">
+          <i className="ri-search-2-line"></i>
+        </div>
+      </header>
+      
 
-      <home-songs>
-        <div className="song">
-          <div className="img">
-            <img src="https://images.unsplash.com/photo-1439778615639-28529f7628bc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGZlbWFsZXxlbnwwfHwwfHx8MA%3D%3D" alt="" />
+      <div className="songs-list">
+        {songData.map((song, index) => (
+          <div className="song-item" key={index}>
+            <div className="song-cover">
+              <img src={song.cover} alt={song.title} />
+            </div>
+            <div className="song-details">
+              <h3>{song.title}</h3>
+              <p>{song.artist}</p>
+            </div>
           </div>
-          <div className="discription">
-            <h1>song Title</h1>
-            <p>Artist name</p>
-          </div>
-        </div>
-        <div className="song">
-          <div className="img">
-            <img src="https://images.unsplash.com/photo-1439778615639-28529f7628bc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGZlbWFsZXxlbnwwfHwwfHx8MA%3D%3D" alt="" />
-          </div>
-          <div className="discription">
-            <h1>song Title</h1>
-            <p>Artist name</p>
-          </div>
-        </div>
-        <div className="song">
-          <div className="img">
-            <img src="https://images.unsplash.com/photo-1439778615639-28529f7628bc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGZlbWFsZXxlbnwwfHwwfHx8MA%3D%3D" alt="" />
-          </div>
-          <div className="discription">
-            <h1>song Title</h1>
-            <p>Artist name</p>
-          </div>
-        </div>
-        <div className="song">
-          <div className="img">
-            <img src="https://images.unsplash.com/photo-1439778615639-28529f7628bc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGZlbWFsZXxlbnwwfHwwfHx8MA%3D%3D" alt="" />
-          </div>
-          <div className="discription">
-            <h1>song Title</h1>
-            <p>Artist name</p>
-          </div>
-        </div>
-        <div className="song">
-          <div className="img">
-            <img src="https://images.unsplash.com/photo-1439778615639-28529f7628bc?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzB8fGZlbWFsZXxlbnwwfHwwfHx8MA%3D%3D" alt="" />
-          </div>
-          <div className="discription">
-            <h1>song Title</h1>
-            <p>Artist name</p>
-          </div>
-        </div>
-      </home-songs>
+        ))}
+      </div>
 
-      <BottomHome/>
-
-    </home-section>
+      
+    </div>
   )
 }
 

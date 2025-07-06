@@ -1,0 +1,11 @@
+1. create a store with the help of configureStore, which is an object , then create an another folder reducer and export the complete configure store object by naming it store!
+2. in main.jsx wrap the app component with provider and gave an attribute store and in it give the value "store" which is the exported from configureStore
+3. create a reducer folder in store and create slices in it eg: musicSlice 
+4. in musicSlice.jsx import createSlice which is again an object , in it create name attribute , initial state which hold the data and export the complete object as eg: musicSlice.reducer.
+
+for: synchronous action
+
+create an reducers folder inside the particular slice, and enter a key value pair wise method and eg: delete: (state,action)=>{} // state is data and action has 2 things (type and payload ) payload is the argument you gave to the action when called(dispatched)
+
+actions don't call, they dispatch   // dispatch is an hook from redux.
+ 
